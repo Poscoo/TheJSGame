@@ -17,7 +17,7 @@
 
 			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 			var material = new THREE.MeshBasicMaterial( { color: 0x59b300 } );
-			var cube = new THREE.Mesh( geometry, material );
+			var render.cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
 			camera.position.z = 5;
@@ -30,6 +30,20 @@
 
 				renderer.render(scene, camera);
 			};
+			function handleKeyDown(event) {
+  			if (event.keyCode === 66) { //66 is "b"
+    				alert("hello there!");
+  			}
+			}
+
+function handleKeyUp(event) {
+  if (event.keyCode === 66) {
+    alert("hello!");
+  }
+}
+
+window.addEventListener('keydown', handleKeyDown, false);
+window.addEventListener('keyup', handleKeyUp, false);
 
 			render();
 
