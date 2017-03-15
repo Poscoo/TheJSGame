@@ -4,13 +4,7 @@
   </head>
   
   <body>
-    
-  </body>
-</html>
-
-
-
-<h1>Hello!</h1>
+    <h1>Hello!</h1>
 <script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
 
 <script>
@@ -22,15 +16,15 @@ animate();
 
 function init() {
 
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000); // a camera 
     camera.position.z = 1000;
 
     scene = new THREE.Scene();
 
-    geometry = new THREE.BoxGeometry(200, 200, 200);
-    material = new THREE.MeshBasicMaterial({
+    geometry = new THREE.BoxGeometry(200, 200, 200); //creates new box; a cube.
+    material = new THREE.MeshBasicMaterial({ //makes a material thats like a texture for the cube.
         color: 0xff0000,
-        wireframe: false
+        wireframe: false // wireframe is like its rendered in wires
     });
 
     mesh = new THREE.Mesh(geometry, material);
@@ -54,3 +48,9 @@ function animate() {
 
 }
 </script>
+
+  </body>
+</html>
+
+
+
