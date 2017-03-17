@@ -30,7 +30,7 @@ function init() {
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
-    controls = new OrbitController(camera, renderer.domElement);
+    
     document.body.appendChild( renderer.domElement );
 
 }
@@ -41,7 +41,7 @@ function animate() {
 
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.02;
-    controls.update();
+    
     renderer.render( scene, camera );
 
 }
