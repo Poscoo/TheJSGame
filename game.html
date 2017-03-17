@@ -1,6 +1,11 @@
 <html>
   <head>
     <title>The JavaScript Game</title>
+	  <style>
+		  p {
+    			font-family: "Arial";
+		  }
+	  </style>
   </head>
   
   <body>
@@ -24,11 +29,11 @@ function init() {
     camera.position.z = 1000;
 
     geometry = new THREE.BoxGeometry( 200, 200, 200 );
-    material = new THREE.MeshBasicMaterial( { color: 0x33ccff, wireframe: true } );
+    material = new THREE.MeshBasicMaterial( { color: 0x33ccff, wireframe: false } );
 
     mesh = new THREE.Mesh( geometry, material );
     scene.add( mesh );
-
+    controls = new OrbitControls(camera, renderer.domElement);
     renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.setClearColor(0xffffff, 1);
@@ -37,7 +42,7 @@ function init() {
 }
 
 function animate() {
-
+    controls.update();
     requestAnimationFrame( animate );
 
     mesh.rotation.x += 0.01;
